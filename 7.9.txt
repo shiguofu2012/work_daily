@@ -1,0 +1,6 @@
+新闻控制台细节部分的研究，
+
+
+
+
+今天又看了Django book书籍，总觉得看那个代码比较吃力，看了Django book并了解了其他杂项。mongodb， github操作。

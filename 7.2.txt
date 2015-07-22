@@ -1,0 +1,17 @@
+了解Django的基本技术。编写基于Django的应用。
+
+基本逻辑，
+需要写视图函数并用 URLconfs把它们和URLs对应起来.
+
+
+urls.py -->  url与实际的请求函数的对应关系，实际的视图请求在views.py中，
+
+
+实际的视图请求函数需要一个request参数，这是HttpRequest类型的；URL中有参数传递第二个参数，转换为int
+
+漂亮的URL，参数的传递，规划，
+
+
+manage.py 
+ mysite/urls.py（django生成的url对应文件，需要添加）  
+ mysite/views.py(自己定义的视图函数)

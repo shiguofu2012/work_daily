@@ -1,0 +1,16 @@
+爬虫加控制台
+
+
+
+
+控制台修改：
+
+operation.py 
+
+get_subscribe_source函数中
+add_exist_source
+
+
+update_subscribe_source 若display字段为空会将name字段插入
+
+get_subscribe_source  若没有display字段则返回空

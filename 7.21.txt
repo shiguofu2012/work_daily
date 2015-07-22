@@ -1,0 +1,5 @@
+banner添加位置信息，shell脚本
+
+
+shell if 语句，数字比较 -ne不等， 字符串比较是否相等用‘=’，如if [ "$1" = "logserver" ]; 判断输入的第一个参数是否是logserver
+
