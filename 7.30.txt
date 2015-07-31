@@ -1,0 +1,14 @@
+
+
+
+统计
+select count(*) from subscribe where date=date_format('2015-05-27', '%Y-%m-%d');
+
+select date,count(*),count(distinct(andriod_id)) from subscribe group by date;
+
+create table subscribe(id int(11) unsigned not null auto_increment primary key, date varchar(11), locale varchar(6), source int(11), andriod_id varchar(32), subscribe int(11));
+
+
+
+统计subscribe为1的个数及0的个数，以日期为组
+select date, sum(case subscribe when 0 then 1 else 0 end) as  unsubscribe，sum(case subscribe when 1 then 1 else 0 end) as subscribe from subscribe group by date;
