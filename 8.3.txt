@@ -1,0 +1,4 @@
+当请求一个页面时，Django 把请求的 metadata 数据包装成一个 HttpRequest 对象，然后 Django 加载合适的 view 方法，把这个 HttpRequest 对象作为第一个参数传给 view 方法。任何 view 方法都应该返回一个 HttpResponse 对象。
+
+
+request.META 是一个Python字典，包含了所有本次HTTP请求的Header信息

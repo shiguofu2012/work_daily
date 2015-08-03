@@ -1,0 +1,8 @@
+模式匹配：
+import re
+
+re.match(pattern, str)
+re.search(pattern ,str)
+
+search()会扫描整个string查找匹配,
+match（）只有在0位置匹配成功的话才有返回，如果不是开始位置匹配成功的话，match()就返回none
