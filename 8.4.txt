@@ -1,0 +1,7 @@
+request.GET ---->  django.http.request.QueryDictÀàĞÍ£¬×Öµä
+
+
+
+timestamp to string:
+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timestamp))
+
