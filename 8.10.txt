@@ -1,0 +1,42 @@
+字典的比较：dict
+首先是字典的大小，然后是键，最后是值。
+
+集合（set）：
+
+比较操作符检查某集合是否是其他集合的超集或子集。< , <=用来判断子集， >, >=用来判断超集。
+
+集合类型操作符：
+
+联合（|）：并集
+
+交集（&）：并集
+
+差补/相对补集（-）：s - t（只属于s，不属于t）
+
+对称差分（^）：s ^ t(只能属于集合s或者集合t的成员，不能同时属于两个集合)
+
+http://www.cnblogs.com/egger/archive/2013/06/14/3135847.html#in
+
+mongodb 操作：
+db.user.find( { age: { $gte: 16 ,$lt:18} }     查找年龄在16 到18之间。
+
+db.user.find({"name":{"$exists":false}})  查找不存在‘name’字段的记录
+
+db.inventory.find( { amount: { $in: [ 16, 50 ] } } )     # amount值为16或者50的记录  $nin 是值不为16或50的记录
+
+
+db.inventory.find({ $and: [ { name: "t1" }, { amount: { $lt：50 } } ] } )  <==>   db.inventory.find({ name: "t1", amount: { $lt：50 }})
+
+
+http://www.cnblogs.com/stephen-liu74/archive/2012/08/03/2553803.html
+
+::::::{ "_id" : ObjectId("4fd5a177b9ac507e96276f1f"), "fruit" : [ "apple", "banana", "peach" ] }:::::
+
+db.test.find({"fruit":"banana"})    包含banana的
+db.test.find({"fruit": {"$all": ["banana","apple"]}})    包含banana、apple的记录，
+db.test.find({"fruit.2":"peach"})   匹配furit的第三个是“peach”的，
+ db.test.find({"fruit": {$size : 3}})   匹配fruit的长度是3的
+
+
+ test.update({},{"$push": {"fruit":"strawberry"},"$inc":{"size":1}},false,true)
+
