@@ -1,0 +1,5 @@
+nginx 配置，
+nginx作为前段接受请求，后端可使用多种服务，包括tomcat-》并发性不强，可多开几个；PHP fastcgi； tornado等，使nginx接受静态的请求html，tomcat等接受动态请求
+
+
+proxy-pass ----- 

@@ -1,0 +1,7 @@
+python多线程
+继承threading.Thread的类，重写run方法，调用start便启动线程
+
+class mythread(threading.Thread):
+    def __init__(self, par...):
+        threading.Thread.__init__(self)
+        self.                             #局部变量
