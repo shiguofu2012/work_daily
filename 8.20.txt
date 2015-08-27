@@ -1,0 +1,2 @@
+IMG_TAG_RE = re.compile(r'<img id=\"(?P<id>.*?)\" src=\"(?P<url>.*?)\".*?>')
+ADD_IMG_RE = re.compile(r'<img data-new=\"true\" src=\"(?P<url>.*?)\"')

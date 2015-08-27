@@ -1,0 +1,26 @@
+删除元素，list
+l = [0, 1, 2, 3, 4]
+for i in l:
+    if i != 4:
+        l.remove(i)
+print l  ----->  [1, 3, 4]
+下次i将在什么位置。
+
+
+删除i后，整个list长度少1，下次就会从被删除元素的下一个的下一个元素开始， 因此，以上循环不可能将数据删完。
+
+
+
+li = [i for i in l if i == 4]  =============这种写法再创建一个list
+
+利用filter（）函数：
+def func(a):
+    if a == 4:
+        return True
+    else:
+        return False          filter(func, l)  ===>这样便会输出[4]
+
+
+
+
+
