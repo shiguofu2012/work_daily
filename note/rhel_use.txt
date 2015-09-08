@@ -1,0 +1,68 @@
+rhn就是经常跳出来提示你注册红帽网络的那个软件。很烦人吧？果断卸载！
+      #yum remove rhn-check.noarch
+      #yum remove rhn-client-tools.noarch
+      #yum remove rhnlib.noarch
+
+
+
+kernel /isoLinux/vmlinuz0 root=live:/dev/sdaN ro rd.live.image quiet rhgb rootfstype=auto 
+
+initrd /isoLinux/initrd0.img 
+
+
+rescue模式下可使用的命令有：set，ls，insmod，root，prefix(设置启动路径)
+
+
+subscription-manager即红帽的订阅管理，也会经常跳出来烦人。卸!
+       #yum remove subscription-manager.i686
+http://fedoraproject.org/wiki/EPEL
+http://rpmfind.net/linux/RPM/index.html
+
+
+RHEL5中的/etc/inittab文件中包括默认运行级别、系统初始化脚本、快捷键组合键定义、虚拟控制台定义等信息。
+
+RHEL6中/etc/inittab文件中只包含默认的运行级别信息，其他的信息被放在不同的文件中：
+
+         系统初始化脚本：/etc/init/rcS.conf
+
+         用于启用不同运行级别下的脚本的配置文件为/etc/init/rc.conf
+
+         ctrl+alt+del键的定义文件为/etc/init/control-alt-delete.conf
+
+         终端和串口终端的配置文件分别为/etc/init/tty.conf和/etc/init/serial.conf（会调用/etc/sysconfig/init中的配置信息）
+
+
+
+
+
+.init找到/etc/inittab文件，确定默认的运行级别(X) （/etc/init/rcS.conf exec telinit $runlevel）
+
+
+
+第一：分区盘符问题
+
+分区符号无法被定义，看看你的分区是否都有了分区符号了，可以在windows的计算机管理里面的磁盘管理中先看一下，确认所有分区都正常后再使用pM    （记住不能把光驱的盘号夹在其他盘符的中间哈）最好重启下
+
+第二：隐藏分区问题
+
+WIN+R呼出运行，输入diskpart.exe回车
+rescan回车
+list disk回车
+select disk X(X为60G硬盘的磁盘号，如果没接其它移动存储设备，这里应该是1，即select disk 1)回车
+list partition回车(若有隐藏分区，将会在此操作后出现，你看看分区大小就能辨认出来)
+select partition X(X为隐藏分区的分区号)回车
+delete partition override回车即可删除隐藏分区
+
+bcdedit /create /d "  sdgads" /application osloader
+bcdedit /set {fsdaf...} device=C:
+bcdedit /set {....}  partition=
+http://218.29.0.252/ 
+
+device partition=...
+path \...
+systemroot \windows
+osdevice partition=C:
+
+这是从联想技术论坛上找的，然后用分区工具
+
+

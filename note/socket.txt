@@ -1,0 +1,28 @@
+int socket(int family, int type, int protocol);
+
+int connect（int sockfd, struct sockaddr*, int len）;
+成功返回0，小于0有错误，失败的原因有多种，地址无效、拒绝等，防火墙也可导致。
+
+int bind(int sockfd, struct sockaddr*, int len);
+成功返回0，小于0失败，失败原因，地址无效、套接字错误；
+
+int recv(int sockfd, char*tmp, int len, int flags)
+返回接收到的数据的字节数， 放到tmp中，它不会添加'\0'标志。
+
+
+
+int select(int maxfdp,fd_set *readfds,fd_set *writefds,fd_set *errorfds,struct timeval *timeout);
+
+当把标准输入重定向到文件时，到文件最后EOF时候，select检测标准输一直是准备好的，因此当select检测包含标准输入的套接字描述符，就会出现一直执行标准输入准备好的子模块，而其他的得不到执行。关键是select内部是从小到大检测文件描述符，标准输入是0.当打开一个文件，它也是一直准备好的，因此两个文件一起select，会交替执行，
+
+
+TCP:
+
+socket --> bind --> listen --> accept  --> read/write
+
+socket -->                  connect --> write/read
+
+服务器端接收到客户端的连接请求，accept会返回客户端的套接字描述符，就可以对该描述符读写给客户端发送/接收数据；
+
+xinetd.d/     
+mount -t nfs 192.168.0.10:/home/share /mnt
