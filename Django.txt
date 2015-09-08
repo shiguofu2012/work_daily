@@ -1,0 +1,38 @@
+了解Django的基本技术。编写基于Django的应用。
+
+基本逻辑，
+需要写视图函数并用 URLconfs把它们和URLs对应起来.
+
+
+urls.py -->  url与实际的请求函数的对应关系，实际的视图请求在views.py中，
+
+
+实际的视图请求函数需要一个request参数，这是HttpRequest类型的；URL中有参数传递第二个参数，转换为int
+
+漂亮的URL，参数的传递，规划，
+
+
+manage.py 
+ mysite/urls.py（django生成的url对应文件，需要添加）  
+ mysite/views.py(自己定义的视图函数)
+
+
+project的作用是提供配置文件，比方说哪里定义数据库连接信息, 安装的app列表;一个app是一套Django功能的集合，通常包括模型和视图
+
+
+添加admin管理：
+app:  设计模型models.py中，在settings.py中添加instal_app，在app目录中的admin.py中添加admin管理admin.site.register
+
+
+URLconf:
+  每个app应该独立管理自己的url，最终在mysite中的urls中使用include
+
+(r'^books/', include('books.urls'))
+
+
+
+当请求一个页面时，Django 把请求的 metadata 数据包装成一个 HttpRequest 对象，然后 Django 加载合适的 view 方法，把这个 HttpRequest 对象作为第一个参数传给 view 方法。任何 view 方法都应该返回一个 HttpResponse 对象。
+
+
+request.META 是一个Python字典，包含了所有本次HTTP请求的Header信息
+request.GET ---->  django.http.request.QueryDict类型，字典

@@ -1,4 +1,0 @@
-
-
-python ≤È’“ªÚ£¨
-db.person.find({"$or":[{'age':33},{'age':30}]})   http://docs.mongodb.org/manual/reference/operator/query/or/#op._S_or

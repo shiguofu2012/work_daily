@@ -1,0 +1,58 @@
+爬虫加控制台
+
+Perl 、 java 、 Lisp 、 Ruby  
+
+Perl 最大的优势在于它的字符串模式匹配，正则表达式匹配引擎。Python的正则表达式引擎很大程度上是给予Perl的。perl是Web服务器CGI网络程序最流行的语言
+
+控制台修改：
+
+operation.py 
+
+get_subscribe_source函数中
+add_exist_source
+
+
+update_subscribe_source 若display字段为空会将name字段插入
+
+get_subscribe_source  若没有display字段则返回空
+
+banner添加位置信息
+
+
+
+
+
+控制台的数据库操作 mongodb ，weibonews/utils中是连接数据库的操作，如Connection；weibonews/__init__.py中做选择数据库。
+__init__.py中总是有很多操作；models.py中没有数据库模型的定义。
+
+
+
+装配器 decorator， 多层decorator。
+
+
+
+settings 中的全局变量：
+ global LOCALES, ADMINDB, WEIBODB, METADB, SITE_LOCATION, 
+        ENABLE_DISPATCH, UTILSDB, WEB, I18N, DEFAULT_LOCALE  
+
+ADMINDB = parse_conn_string(config_parser.get(section, 'admindb')) 对其进行赋
+
+
+======================================================================================================
+push_id=[{"id":47}]
+
+fiddler  POST参数，
+
+
+
+CGI 就是所谓的短生存期应用程序，FastCGI 就是所谓的长生存期应用程序。
+
+fork-and-execute模式。所以用cgi方式的服务器有多少连接请求就会有多少cgi子进程，子进程反复加载是cgi性能低下的主要原因。
+
+FastCGI是语言无关的、可伸缩架构的CGI开放扩展，其主要行为是将CGI解释器进程保持在内存中并因此获得较高的性能。
+
+nginx 配置，
+nginx作为前段接受请求，后端可使用多种服务，包括tomcat-》并发性不强，可多开几个；PHP fastcgi； tornado等，使nginx接受静态的请求html，tomcat等接受动态请求
+
+
+proxy-pass ----- 

@@ -1,0 +1,67 @@
+mongodb：
+
+mongo中存储的是字典形式
+show dbs    查看数据库
+db ------ 查看当前的数据库。
+use [数据库名称]
+
+show collections   查看表结构
+
+db.person.find()   列出person表中的所有信息
+
+
+
+python访问mongo：
+
+client = MongoClient()
+db = client.test(test是Mongo中的一个数据库)
+
+posts = db.post(post 是test数据库中的表)
+可以使用posts插入、删除、查找了。
+result = posts.find()
+
+http://www.cnblogs.com/egger/archive/2013/06/14/3135847.html#in
+
+mongodb 操作：
+db.user.find( { age: { $gte: 16 ,$lt:18} }     查找年龄在16 到18之间。
+
+db.user.find({"name":{"$exists":false}})  查找不存在‘name’字段的记录
+
+db.inventory.find( { amount: { $in: [ 16, 50 ] } } )     # amount值为16或者50的记录  $nin 是值不为16或50的记录
+
+
+db.inventory.find({ $and: [ { name: "t1" }, { amount: { $lt：50 } } ] } )  <==>   db.inventory.find({ name: "t1", amount: { $lt：50 }})
+
+
+http://www.cnblogs.com/stephen-liu74/archive/2012/08/03/2553803.html
+
+::::::{ "_id" : ObjectId("4fd5a177b9ac507e96276f1f"), "fruit" : [ "apple", "banana", "peach" ] }:::::
+
+db.test.find({"fruit":"banana"})    包含banana的
+db.test.find({"fruit": {"$all": ["banana","apple"]}})    包含banana、apple的记录，
+db.test.find({"fruit.2":"peach"})   匹配furit的第三个是“peach”的，
+db.test.find({"fruit": {$size : 3}})   匹配fruit的长度是3的
+
+
+ test.update({},{"$push": {"fruit":"strawberry"},"$inc":{"size":1}},false,true)
+
+python 查找或，
+db.person.find({"$or":[{'age':33},{'age':30}]})   
+
+http://docs.mongodb.org/manual/reference/operator/query/or/#op._S_or
+
+:::::::::::::::::::::::mysql::::::::::::::::::
+==================================================================================================================
+
+统计
+select count(*) from subscribe where date=date_format('2015-05-27', '%Y-%m-%d');
+
+select date,count(*),count(distinct(andriod_id)) from subscribe group by date;
+
+create table subscribe(id int(11) unsigned not null auto_increment primary key, date varchar(11), locale varchar(6), source int(11), andriod_id varchar(32), subscribe int(11));
+
+
+
+统计subscribe为1的个数及0的个数，以日期为组
+select date, sum(case subscribe when 0 then 1 else 0 end) as  unsubscribe，sum(case subscribe when 1 then 1 else 0 end) as subscribe from subscribe group by date;
+
