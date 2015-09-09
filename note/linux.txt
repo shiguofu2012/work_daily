@@ -3,7 +3,9 @@ rhn就是经常跳出来提示你注册红帽网络的那个软件。很烦人吧？果断卸载！
       #yum remove rhn-client-tools.noarch
       #yum remove rhnlib.noarch
 
+kernel (hd0,0)/vmlinuz boot=casper iso-scan/filename=/ubuntu-11.10-i386.iso ro quiet splash locale=zh_CN.UTF-8
 
+sudo umount -l /isodevice
 
 kernel /isoLinux/vmlinuz0 root=live:/dev/sdaN ro rd.live.image quiet rhgb rootfstype=auto 
 
@@ -66,3 +68,38 @@ osdevice partition=C:
 这是从联想技术论坛上找的，然后用分区工具
 
 
+存储管理、CPU和进程管理、文件系统、设备管理和驱动、网络通信，以及系统的初始化(引导)、系统调用等。
+进程管理（process management）、 1
+　　定时器（timer）、 2
+　　中断管理（interrupt management）、 3
+　　内存管理（memory management）、 4
+　　模块管理（module management）、 5
+　　虚拟文件系统接口（VFS layer）、 6
+　　文件系统（file system）、 7
+　　设备驱动程序（device driver）、 8
+　　进程间通信（inter-process communication）、9
+　　网络管理（network management）、 10
+　　系统启动（system init）等操作系统功能的实现。 11
+
+inux 内核主要由 5 个模块构成,它们分别是:进程调度模块、内存管理模块、文件系统模块、进程间通信模块和网络接口模块
+
+
+红枣，黑豆，黑米，绿豆，红豆，花生，黑芝麻，每天两次，早上一次晚上一次！坚持两个月即有效！
+奶类、蛋类、豆类、鱼类和黑色性食物、种子性、胚胎性食物，只要保证营养，坚持保养，
+
+
+ospf   eigrp  组播   BGP 策略  asic
+no ip domain lookup
+ip routing 开路由
+switchport 二层
+no switchport 三层
+
+0000.0c 07.ac 01
+cisco    hsrp  HSRP Group
+
+129987721
+
+
+rescue模式下可使用的命令有：set，ls，insmod，root，prefix(设置启动路径)
+
+路由环路   不精确的汇总  

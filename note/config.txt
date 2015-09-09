@@ -1,0 +1,52 @@
+
+netbios是基于广播的，当网络规模较大时，可以使用wins服务器。netbios名最长15字符，共16个，一个标识服务。
+hostname查看主机名，nbtstat -n 查看主机netbios名。
+wins 客户类型：B-NODE(广播，不是wins客户端),P-NODE（不广播，用wins服务）,M-NODE（先B后P）,H-NODE（先P后B）
+wins 客户是在登录前在wins服务器上注册的，如果同时注册过多会登录过慢。
+网络共享：简单共享是已guest身份登录的，所以要确保guest没有被禁用，同时在组策略中本地策略 中拒绝从网络访问这台计算机 把guest删掉  安全选项中 本地账户的共享和安全模式 改为经典  使用空白密码只能用控制台登录  禁用
+
+
+
+DEVICE/DEVICEHIGH：将指定的设备驱动程序装入内存。 
+BUFFERS/BUFFERSHIGH：为指定数量的磁盘缓冲区分配内存。
+DOS：用于DOS系统的配置，如是否使用HMA（高端内存区）等
+DOS=[HIGH|LOW][,UMB|,NOUMB][,AUTO|,NOAUTO][，SINGLE] 
+FCBS/FCBSHIGH：指定可以同时打开的文件控制块 (FCB) 的数量。 
+FILES/FILESHIGH：指定 可以同时访问的文件数量。 
+INSTALL/INSTALLHIGH：用于加载TSR（内存驻留程序）。 
+SHELL：指定DOS 使用的命令解释程序的名称和位置。
+
+
+奥迪（德国）、兰博基尼(意大利)、宾利(英国)、布加迪(法国)、西亚特(西班牙)、斯柯达(捷克)、大众汽车商用车(德国 )保时捷（德国）。
+福特，通用，丰田，大众，本田，日产，宝马，戴姆勒-克莱斯勒，psa集团（标志），菲亚特
+mysql -h 127.0.0.1 -uroot -p123
+alter table user character set gbk;
+alter table user modify favorites char(50) character set gbk;
+create table test(zh char(20) character set gbk,...)
+
+
+
+a:link { text-decoration: none;color: blue}
+　　　　 a:active { text-decoration:blink}
+　　　　 a:hover { text-decoration:underline;color: red} 
+　　　　 a:visited { text-decoration: none;color: green}
+　　
+　　　　代码分析：
+　　　　a:link 指正常的未被访问过的链接，blue 文字为兰色。
+　　　　a:active 指正在点的链接。
+　　　　a:hover 指鼠标在链接上，red 文字为红色。
+　　　　a:visited 指已经访问过的链接，black 文字为黑色。
+　　　　text-decoration 是文字修饰效果的意思。
+　　　　none 参数表示超链接文字不显示下划线。
+　　　　underline 参数表示超链接的文字有下划线。
+
+
+bcdedit /create /d "  sdgads" /application osloader
+bcdedit /set {fsdaf...} device=C:
+bcdedit /set {....}  partition=
+http://218.29.0.252/ 
+
+device partition=...
+path \...
+systemroot \windows
+osdevice partition=C:
