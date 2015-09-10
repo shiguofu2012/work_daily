@@ -1,5 +1,8 @@
 了解Django的基本技术。编写基于Django的应用。
 
+python manage.py makemigrations polls(app name)
+python manage.py sqlmigrate polls(app name) 0001
+
 基本逻辑，
 需要写视图函数并用 URLconfs把它们和URLs对应起来.
 

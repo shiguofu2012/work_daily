@@ -1,0 +1,39 @@
+mysql查询中日期的比较，
+
+mysql导出数据 
+mysqldump -uroot -pP@55word stat_EN subscribe > out.sql
+                          -d选项导出表结构，不加表示导出表结构及数据
+
+mongo 导出数据
+
+mongoexport [-h ip] -d test -c person -o [filename]
+       数据库的IP，默认本机    -d：database  -c：collection，要导出的表   -o输出的文件名
+mongoimport [-h ip] -d test -c person [filename]
+
+memcached  基于libevent的事件处理
+
+memcached 是一个高性能的分布式内存对象缓存系统，用于动态Web应用以减轻数据库负载。
+
+基于Slab的内存管理方式
+
+
+slab机制相当于内存池机制,实现从操作系统分配一大块内存, 然后 memcached 自己管理这块内存, 负责分配与回收。
+
+
+
+/etc/init.d/  脚本
+sudo update-rc.d 脚本 defaults
+
+
+map/reduce
+并行处理的计算框架。MapReduce是一种编程模型，用于大规模数据集（大于1TB）的并行分析运算。
+MapReduce是一套从海量·源数据提取分析元素最后返回结果集的编程模型，将文件分布式存储到硬盘是第一步，而从海量数据中提取分析我们需要的内容就是MapReduce做的事了。
+
+
+
+
+redis基本操作
+set
+get
+
+hget  hset
