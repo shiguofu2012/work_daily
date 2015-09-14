@@ -1,0 +1,5 @@
+python中的tuple没有方法，一旦定义便不可改变，
+
+它是比list更快，不断遍历，可选tuple
+
+tuple可以作为字典的key而list不可以。

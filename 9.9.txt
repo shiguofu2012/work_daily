@@ -36,4 +36,4 @@ redis»ù±¾²Ù×÷
 set
 get
 
-hget  hset
+hget  hset  hgetall 
