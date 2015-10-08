@@ -1,0 +1,26 @@
+HBASE  --- Hadoop 
+
+GFS --- BigTable
+
+
+urllib2重要的概念, openers handlers
+
+
+TCP 的TIME_WAIT状态，主动关闭的那段进入TIME_WAIT状态（MSL）
+1）可靠的实现TCP全双工连接的终止。
+2)允许老的重复分节在网络中消逝。
+
+
+关机 -－> init进程给所有进程发送SIGTERM，等待5 - 20s发送SIGKILL。
+
+SIGCHLD
+
+
+向一个终止的服务子进程发送数据一次会收到RST，当其继续发送数据，内核会对其发送SIGPIPE。
+服务器主机崩溃，客户端超时，
+
+
+select poll
+
+
+pselect epoll 
