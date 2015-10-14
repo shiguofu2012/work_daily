@@ -27,3 +27,7 @@ http://www.360doc.com/content/13/0806/16/11818366_305157970.shtml
 http://www.cnblogs.com/sysu-blackbear/p/3629770.html
 
 openers handler
+
+
+
+http://blog.csdn.net/xiazdong/article/details/6895465/   java DAO

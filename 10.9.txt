@@ -1,0 +1,36 @@
+客户层-------显示层-------业务层---------数据层---------数据库
+
+1.客户层：客户层就是客户端，简单的来说就是浏览器。
+2.显示层：JSP/Servlet，用于给浏览器显示。
+3.业务层：对于数据层的原子操作进行整合。
+4.数据层：对于数据库进行的原子操作，增加、删除等；
+
+
+ Action像是服务员，顾客点什么菜，菜上给几号桌，都是ta的职责；
+
+ Service是厨师，action送来的菜单上的菜全是ta做的；
+
+ Dao是厨房的小工，和原材料打交道的事情全是ta管。
+
+
+java 中的DAO模式， 
+
+异常， 方法后抛出异常与内部写异常。
+
+
+java List是一个抽象接口。
+三种遍历方法：
+1.for循环 
+for(i = 0; i < list.size(); i++)
+    System.out.print(list.get(i))
+
+2. java最新提供的遍历方式,
+假如list中的元素都是String类型的
+for(String tmp:list)
+    System.out.print(tmp);
+3. Iterator
+Iterator<String> it = list.iterator();
+while(it.hasNext())
+    System.out.print(it.next())
+
+三种方法中， 3最快，2次之，1最慢，因此，如无其他要求最好用Iterator

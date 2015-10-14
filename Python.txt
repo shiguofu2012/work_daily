@@ -142,6 +142,21 @@ def func(a):
     else:
         return False          filter(func, l)  ===>这样便会输出[4]
 
+
+enumerate()与zip()
+
+对list枚举：enumerate()
+如： l = ['a', 'b', 'c']
+for i, item in enumerate(l):
+    print i, j                                  
+---- 输出添加索引：
+0 ‘a’
+1 ‘b’
+2 ‘c’    
+zip同时输出连个list；
+for i, j in zip(l1, l2):
+    print i, j
+
 ==============================================================================================================================================================
 
 python 文件格式
