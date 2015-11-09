@@ -1,0 +1,10 @@
+logserver:107.20.255.185
+germany-console-52.28.56.71
+singapore-console-52.74.105.237
+japan console-54.199.120.133
+frank-console-54.93.41.242
+aliyun console-112.124.48.97
+
+
+121.197.0.61  nginx redis uwsgi
+120.26.86.188 mongodb
