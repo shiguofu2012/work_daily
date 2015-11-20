@@ -1,0 +1,58 @@
+gfshi:gfshi@pass1
+tunnel.dolphin-browser.com
+
+
+cd ~
+mkdir vimrc-git
+cd vimrc-git
+git clone http://github.com/likun5053/vimrc.git vimrc
+cd vimprc
+./autoinstall.sh
+cd ~
+git clone https://github.com/vispeal/vimrc.git
+安装其它依赖
+sudo apt-get install ctags
+sudo pip install vim_bridge
+sudo pip install pyflakes
+
+mongo缺点：
+
+在32位系统上，不支持大于2.5G的数据。详见这里
+单个文档大小限制为 4 M/16 M（1.8版本后升为16M）
+锁粒度太粗，MongoDB使用的是一把全局的读写锁，详见这里
+不支持join操作和事务机制，这个确实是非MongoDB要做的领域
+对内存要求比较大，至少要保证热数据（索引，数据及系统其它开销）都能装进内存
+用户权限方面比较弱，这一点MongoDB官方推荐的是将机器部署在安全的内网环境中，尽量不要用权限，详见这里
+MapReduce在单个实例上无法并行，只有采用Auto-Sharding才能并行。这是由JS引擎的限制造成的
+MapReduce的结果无法写入到一个被Sharding的Collection中，2.0版本对这个问题的解决好像也不彻底
+对于数组型的数据操作不够丰富
+Auto-Sharding还存在很多问题，所谓的水平扩展也不是那么理想
+
+
+mongo适合的领域：
+
+u  适合实时的插入，更新与查询，并具备应用程序实时数据存储所需的复制及高度伸缩性。
+
+u  适合作为信息基础设施的持久化缓存层。
+
+u  适合由数十或数百台服务器组成的数据库。因为Mongo已经包含对MapReduce引擎的内置支持。
+
+u  Mongo的BSON数据格式非常适合文档化格式的存储及查询。
+
+网站数据：Mongo非常适合实时的插入，更新与查询，并具备网站实时数据存储所需的复制及高度伸缩性。
+
+u  ◆缓存：由于性能很高，Mongo也适合作为信息基础设施的缓存层。在系统重启之后，由Mongo搭建的持久化缓存层可以避免下层的数据源过载。
+
+u  ◆大尺寸，低价值的数据：使用传统的关系型数据库存储一些数据时可能会比较昂贵，在此之前，很多时候程序员往往会选择传统的文件进行存储。
+
+u  ◆高伸缩性的场景：Mongo非常适合由数十或数百台服务器组成的数据库。Mongo的路线图中已经包含对MapReduce引擎的内置支持。
+
+u  ◆用于对象及JSON数据的存储：Mongo的BSON数据格式非常适合文档化格式的存储及查询
+
+
+mongo 不适合的领域：
+高度事务性的系统：例如银行或会计系统。传统的关系型数据库目前还是更适用于需要大量原子性复杂事务的应用程序。
+
+·        ◆传统的商业智能应用：针对特定问题的BI数据库会对产生高度优化的查询方式。对于此类应用，数据仓库可能是更合适的选择。
+
+·        ◆需要SQL的问题
