@@ -1,0 +1,35 @@
+wsgi
+要求应用程序
+1.是可调用对象。
+1）可调用的方法。
+def application(env, start_response):
+    return []
+2)可调用的对象
+3）可调用的
+2.返回可迭代的值。
+
+
+在Nginx location 里加上如下代码可以解决js 请求跨域问题
+
+
+if ($request_method = 'OPTIONS') { 
+add_header Access-Control-Allow-Origin *; 
+add_header Access-Control-Allow-Credentials true; 
+add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS'; 
+add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type'; 
+return 200; 
+}
+
+if ($request_method = 'POST') {
+add_header 'Access-Control-Allow-Origin' *; 
+add_header 'Access-Control-Allow-Credentials' 'true'; 
+add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS'; 
+add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+}
+
+if ($request_method = 'GET') {
+add_header 'Access-Control-Allow-Origin' *; 
+add_header 'Access-Control-Allow-Credentials' 'true'; 
+add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS'; 
+add_header 'Access-Control-Allow-Headers' 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+} 

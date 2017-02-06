@@ -1,0 +1,3 @@
+rhel 配置：
+防火墙， selinux
+自定义安装的python2.7，要用python安装pip，之后使用pip安装django以及uwsgi。

@@ -13,10 +13,18 @@ dolphin_wh@gmail.com
 dolphin123456
 
 
-http://172.18.7.20:8888/gfshi/weixin-service
 
-oWDB4t4qy2er23yYeiiCXxmtb7sE
+方案1：
+在对unicode字符编码时，添加ignore参数，忽略无法无法编码的字符，这样就可以正常编码为GBK了。
 
+对应代码为：
+
+gbkTypeStr = unicodeTypeStr.encode(“GBK“, ‘ignore’);
+方案2：
+或者，将其转换为GBK编码的超集GB18030 （即，GBK是GB18030的子集）：
+
+gb18030TypeStr = unicodeTypeStr.encode(“GB18030“);
+对应的得到的字符是GB18030的编码。
 
 合并两个list，并去重，
 过滤list， ---》 filter
@@ -38,7 +46,20 @@ http://www.cnblogs.com/sysu-blackbear/p/3629770.html
 
 openers handler
 
-31ef437719d08a075d573574252460f3
-
 
 http://blog.csdn.net/xiazdong/article/details/6895465/   java DAO
+
+
+
+CORS:
+http://www.cnblogs.com/loveis715/p/4592246.html
+
+http://my.oschina.net/1pei/blog?disp=2&catalog=594702&sort=time&p=3
+
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+
+
+https://cnodejs.org/topic/519c234863e9f8a542aa7ebd
+
+https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS
